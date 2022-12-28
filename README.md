@@ -1,2 +1,2 @@
 # LaPluma
-A C++ UI framework
+A C++ Application framework

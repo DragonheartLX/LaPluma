@@ -1,0 +1,11 @@
+cmake_minimum_required (VERSION 3.13)
+
+project(LaPluma)
+
+if(NOT DEFINED CMAKE_CXX_STANDARD)
+	set(CMAKE_CXX_STANDARD 20)
+endif()
+
+add_subdirectory(external)
+add_subdirectory(LaPluma)
+add_subdirectory(LaPlumaApp)

@@ -1,0 +1,10 @@
+file(GLOB_RECURSE LaPluma_Src LIST_DIRECTORIES false 
+    *.cpp
+    **/*.cpp)
+
+add_library(LaPluma STATIC ${LaPluma_Src})
+target_include_directories(LaPluma PUBLIC .)
+
+target_link_libraries(LaPluma PUBLIC glfw glm::glm stb glad)
+
+install(TARGETS LaPluma DESTINATION bin)

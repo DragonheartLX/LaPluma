@@ -1,0 +1,9 @@
+file(GLOB_RECURSE LaPluma_Src LIST_DIRECTORIES false 
+    *.cpp
+    **/*.cpp)
+
+add_executable(LaPlumaApp ${LaPluma_Src})
+target_include_directories(LaPlumaApp PRIVATE .)
+target_link_libraries(LaPlumaApp PRIVATE LaPluma)
+
+install(TARGETS LaPlumaApp DESTINATION bin)

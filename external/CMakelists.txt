@@ -1,0 +1,14 @@
+## GLFW
+add_subdirectory(GLFW)
+
+## glm
+add_subdirectory(glm)
+
+## stb_image
+add_library(stb INTERFACE)
+target_include_directories(stb INTERFACE stb)
+
+## glad
+add_library(glad INTERFACE)
+target_sources(glad INTERFACE ./glad/glad.c)
+target_include_directories(glad INTERFACE glad)
