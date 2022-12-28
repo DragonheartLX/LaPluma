@@ -12,3 +12,6 @@ target_include_directories(stb INTERFACE stb)
 add_library(glad INTERFACE)
 target_sources(glad INTERFACE ./glad/glad.c)
 target_include_directories(glad INTERFACE glad)
+
+## spdlog
+add_subdirectory(spdlog)

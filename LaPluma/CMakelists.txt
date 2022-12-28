@@ -5,6 +5,16 @@ file(GLOB_RECURSE LaPluma_Src LIST_DIRECTORIES false
 add_library(LaPluma STATIC ${LaPluma_Src})
 target_include_directories(LaPluma PUBLIC .)
 
-target_link_libraries(LaPluma PUBLIC glfw glm::glm stb glad)
+if(WIN32)
+	message("-- Build LaPlumaApp for Win32")
+    target_compile_definitions(LaPluma PRIVATE LP_WINDOWS)
+endif(WIN32)
+
+target_link_libraries(LaPluma PUBLIC
+    glfw
+    glm::glm
+    stb
+    glad
+    spdlog::spdlog)
 
 install(TARGETS LaPluma DESTINATION bin)

@@ -1,10 +1,17 @@
 #include <iostream>
+#include <LaPluma.h>
 
 using namespace std;
+using namespace LaPluma;
 
-int main(int argc, char** argv){
+class LaPlumaApp: public Application
+{
+public:
+    LaPlumaApp() {};
+    ~LaPlumaApp() {};
+};
 
-    cout << "Hello" << endl;
-
-    return 0;
-}
+LaPluma::Application* LaPluma::createApplication(int argc, char** argv)
+{
+    return new LaPlumaApp();
+};

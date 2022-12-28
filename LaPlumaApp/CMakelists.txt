@@ -4,6 +4,12 @@ file(GLOB_RECURSE LaPluma_Src LIST_DIRECTORIES false
 
 add_executable(LaPlumaApp ${LaPluma_Src})
 target_include_directories(LaPlumaApp PRIVATE .)
+
+if(WIN32)
+	message("-- Build LaPluma for Win32")
+    target_compile_definitions(LaPlumaApp PRIVATE LP_WINDOWS)
+endif(WIN32)
+
 target_link_libraries(LaPlumaApp PRIVATE LaPluma)
 
 install(TARGETS LaPlumaApp DESTINATION bin)
